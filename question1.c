@@ -43,7 +43,7 @@ for(int i = 0; i < count ; i++){
 
     while(quantities[i]<0){
         printf("Invalid amount");
-        scanf("%f",&quantities[i]);
+        scanf("%d",&quantities[i]);
     }
 }
 
@@ -99,7 +99,7 @@ void addbook(int isbns[], char titles[][50], float prices[], int quantities[], i
     scanf("%d", &new_books);
 
 if( *count + new_books > 100){
-    printf("Book limit exceeded");
+    printf("Book limit exceeded \n");
     return;
 }
 
@@ -120,7 +120,9 @@ for( int i = 0; i< new_books; i++)
    if( isbns[j]== new_isbn)
    {
         printf("Book with ISBN %d already exists.\n", new_isbn);
-        continue;   
+        printf("Please enter a different ISBN number. \n");
+        scanf("%d", &new_isbn);
+        j=-1; 
    }   
 }
  
